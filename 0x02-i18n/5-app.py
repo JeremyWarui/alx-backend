@@ -10,7 +10,7 @@ app = Flask(__name__)
 """instanciate Babel object"""
 babel = Babel(app)
 
-
+"""mock a database users table"""
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
     2: {"name": "Beyonce", "locale": "en", "timezone": "US/Central"},
