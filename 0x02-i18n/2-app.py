@@ -30,6 +30,7 @@ def home():
 
 @babel.localeselector
 def get_locale():
+    """getlocale function that returns best match of the languages"""
     return request.accept_language.best_match(app.config["LANGUAGES"])
 
 
