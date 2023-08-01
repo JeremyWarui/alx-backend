@@ -38,13 +38,13 @@ def home():
 
 @babel.localeselector
 def get_locale():
-    """determine best match for supported languages"""
+    """getlocale function that returns best match of the languages"""
     if request.args.get('locale'):
         locale = request.args.get("locale")
         if locale in app.config["LANGUAGES"]:
             return locale
     else:
-        return request.accept_language.best_match(app.config["LANGUAGES"])
+        return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 def get_user():
