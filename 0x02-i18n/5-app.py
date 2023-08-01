@@ -51,8 +51,7 @@ def get_user():
     """returns user's dict if ID can be found"""
     if request.args.get("login_as"):
         user = int(request.args.get("login_as"))
-        if user in users:
-            return users.get(user)
+        return users[user]
     else:
         return None
 
