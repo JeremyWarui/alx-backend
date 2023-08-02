@@ -45,7 +45,7 @@ def get_locale():
         return locale
     user = int(requests.args.get("login_as"))
     elif user:
-        local_language = g.user.get("locale")
+        local_language = users.user["locale"]
         if local_language in languages:
             return local_language
     req_language = request.headers.get("locale")
