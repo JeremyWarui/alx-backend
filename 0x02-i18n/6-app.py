@@ -33,7 +33,7 @@ app.config.from_object(Config)
 @app.route("/", strict_slashes=False)
 def home():
     """render home page"""
-    return render_template("5-index.html")
+    return render_template("6-index.html")
 
 
 @babel.localeselector
