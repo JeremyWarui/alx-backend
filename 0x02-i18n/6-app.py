@@ -44,14 +44,15 @@ def get_locale():
     if locale in languages:
         return locale
     user = int(requests.args.get("login_as"))
-    if user:
+    elif user:
         local_language = g.user.get("locale")
         if local_language in languages:
             return local_language
     req_language = request.headers.get("locale")
-    if req_language in languages:
+    elif req_language in languages:
         return req_language
-    return request.accept_languages.best_match(app.config["LANGUAGES"])
+    else:
+        return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 def get_user():
