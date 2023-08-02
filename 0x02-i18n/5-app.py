@@ -49,10 +49,10 @@ def get_locale():
 
 def get_user():
     """returns user's dict if ID can be found"""
-    if request.args.get("login_as"):
+    try:
         user = int(request.args.get("login_as"))
         return users[user]
-    else:
+    except Exception:
         return None
 
 
